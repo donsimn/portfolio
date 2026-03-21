@@ -70,81 +70,15 @@ export const blogPosts = [
  */
 export const portfolioProjects = [
   {
-    slug: 'fpv-drone-build',
-    title: 'Custom FPV Racing Drone Build',
-    date: '2026.03.20',
+    slug: 'brgos',
+    title: 'Vex V5 Robotics OS',
+    date: 'Nov 2024 - Mar 2025',
     description:
-      'Ground-up custom FPV drone build featuring hand-soldered components, firmware tuning, and iterative hardware refinement from V1 to V2.',
-    thumbnail: '/images/portfolio/fpv-drone.jpg',
-    tags: ['Hardware', 'FPV', 'Electronics'],
-    client: 'Personal Project',
-    year: '2026'
-  },
-  {
-    slug: 'techcorp-rebrand',
-    title: 'TechCorp Brand Identity Redesign',
-    date: '2026.03.01',
-    description:
-      'Complete brand overhaul for a Silicon Valley tech startup, including logo design, brand guidelines, and digital presence.',
-    thumbnail: '/images/portfolio/techcorp.jpg',
-    tags: ['Branding', 'Identity', 'Web Design'],
-    client: 'TechCorp Inc.',
-    year: '2026'
-  },
-  {
-    slug: 'ecommerce-platform',
-    title: 'E-Commerce Platform Redesign',
-    date: '2026.02.15',
-    description:
-      'UX/UI redesign of a major e-commerce platform, focusing on conversion optimization and mobile-first experiences.',
-    thumbnail: '/images/portfolio/ecommerce.jpg',
-    tags: ['UX/UI', 'E-Commerce', 'Mobile'],
-    client: 'ShopFlow',
-    year: '2026'
-  },
-  {
-    slug: 'fintech-dashboard',
-    title: 'FinTech Analytics Dashboard',
-    date: '2026.01.20',
-    description:
-      'Data visualization and dashboard design for a financial technology platform serving enterprise clients.',
-    thumbnail: '/images/portfolio/fintech.jpg',
-    tags: ['Dashboard', 'Data Viz', 'SaaS'],
-    client: 'FinanceFlow',
-    year: '2026'
-  },
-  {
-    slug: 'mobile-app-design',
-    title: 'Health & Fitness Mobile App',
-    date: '2025.12.10',
-    description:
-      'Native mobile app design system and user experience for a health tracking application.',
-    thumbnail: '/images/portfolio/fitness-app.jpg',
-    tags: ['Mobile', 'Design System', 'Health'],
-    client: 'FitTrack',
-    year: '2025'
-  },
-  {
-    slug: 'saas-marketing-site',
-    title: 'SaaS Marketing Website',
-    date: '2025.11.05',
-    description:
-      'Marketing website design and development for a B2B SaaS platform, with focus on conversion and storytelling.',
-    thumbnail: '/images/portfolio/saas-site.jpg',
-    tags: ['Web Design', 'Marketing', 'Development'],
-    client: 'CloudBase',
-    year: '2025'
-  },
-  {
-    slug: 'design-system',
-    title: 'Enterprise Design System',
-    date: '2025.10.18',
-    description:
-      'Comprehensive design system built for a Fortune 500 company, including component library and documentation.',
-    thumbnail: '/images/portfolio/design-system.jpg',
-    tags: ['Design System', 'Components', 'Enterprise'],
-    client: 'MegaCorp',
-    year: '2025'
+      'BRGOS is the operating system I developed for our Vex V5 team Big Red Gears\' robot, which competed twice at the Swiss National Robotics Competition.',
+    thumbnail: '/images/BRGOS4.jpeg',
+    tags: ['Robotics', 'C++', 'Colaboration'],
+    client: 'Team Big Red Gears',
+    year: '2024'
   }
 ];
 
