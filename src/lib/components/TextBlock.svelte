@@ -109,6 +109,26 @@
 		background: rgba(255, 255, 255, 0.1);
 	}
 
+	.text-block :global(h2) {
+		font-size: 1.875rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+		margin-bottom: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.text-block :global(h2) {
+			font-size: 2.25rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.text-block :global(h2) {
+			font-size: 3rem;
+		}
+	}
+
 	.text-block :global(h3) {
 		font-size: 1.5rem;
 		font-weight: 700;

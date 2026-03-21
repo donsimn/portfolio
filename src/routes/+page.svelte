@@ -1,130 +1,195 @@
-<script lang="ts">
+<script>
 	import {
 		Hero,
 		Section,
 		SectionHeader,
 		TextBlock,
-		Grid,
-		ProjectCard,
+		Reveal,
 		Button,
-		Reveal
+		ButtonGroup,
+		FullColumn,
+		TwoColumn,
+		CenteredColumn,
+		Separator
 	} from '$lib/components';
+
+	/** @type {import('./$types').PageData} */
+	let { data } = $props();
+
+	const { projects, posts } = data;
 </script>
 
 <svelte:head>
-	<title>Home — Portfolio</title>
+	<title>Portfolio — Don Sim</title>
+	<meta
+		name="description"
+		content="Designer and developer focused on Swiss design principles, precision, and functional beauty."
+	/>
 </svelte:head>
 
-<!-- Hero Section -->
-<Hero
-	title="Digital Designer<br />& Developer"
-	subtitle="Crafting precise, functional, and beautiful digital experiences through Swiss design principles."
-	height="tall"
->
-	<div class="flex flex-col sm:flex-row gap-4">
-		<Button variant="primary" size="md">View My Work</Button>
-		<Button variant="secondary" size="md">Get in Touch</Button>
-	</div>
+<Hero title="Don Sim" subtitle="Designer & Developer" height="tall">
+	<ButtonGroup align="left" gap="md">
+		<Button variant="primary" size="md" href="/portfolio">View Work</Button>
+		<Button variant="secondary" size="md" href="/contact">Get in Touch</Button>
+	</ButtonGroup>
 </Hero>
 
-<!-- About Section -->
 <Section padding="lg" border="bottom">
-	<div class="col-span-12">
+	<FullColumn>
 		<Reveal>
 			<SectionHeader
-				label="About"
-				title="Precision Through Design"
-				subtitle="Creating impactful digital experiences at the intersection of form and function."
+				title="About"
+				subtitle="Creating precise, functional digital experiences"
 				rule="after"
 			/>
 		</Reveal>
-	</div>
+	</FullColumn>
 
-	<div class="col-span-12 lg:col-span-8">
-		<Reveal delay={100}>
-			<TextBlock size="lg" opacity={0.8}>
-				<p>
-					I specialize in creating digital products that combine <strong>Swiss design principles</strong>
-					with modern web technologies. Every project is built with attention to detail, mathematical
-					precision, and a focus on user experience.
-				</p>
-				<p>
-					My approach emphasizes clarity, hierarchy, and functional beauty. No unnecessary
-					ornamentation—just pure, purposeful design.
-				</p>
-			</TextBlock>
-		</Reveal>
-	</div>
+	<TwoColumn ratio="8-4">
+		{#snippet left()}
+			<Reveal delay={100}>
+				<TextBlock size="lg" opacity={0.8}>
+					<p>
+						I specialize in creating digital products that combine Swiss design principles with
+						modern web technologies. Every project is built with attention to detail, mathematical
+						precision, and a focus on user experience.
+					</p>
+					<p>
+						My approach emphasizes clarity, hierarchy, and functional beauty. No unnecessary
+						ornamentation—just pure, purposeful design.
+					</p>
+				</TextBlock>
+			</Reveal>
+		{/snippet}
+		{#snippet right()}
+			<Reveal delay={200}>
+				<TextBlock opacity={0.6}>
+					<p>
+						<strong>Expertise</strong><br />
+						Brand Identity<br />
+						Web Design<br />
+						Development<br />
+						Design Systems
+					</p>
+				</TextBlock>
+			</Reveal>
+		{/snippet}
+	</TwoColumn>
 </Section>
 
-<!-- Featured Work Section -->
 <Section padding="lg" border="bottom">
-	<div class="col-span-12">
+	<FullColumn>
 		<Reveal>
-			<SectionHeader label="Selected Work" title="Featured Projects" rule="after" />
+			<SectionHeader title="Selected Work" subtitle="Featured projects" rule="after" />
 		</Reveal>
-	</div>
+	</FullColumn>
 
-	<div class="col-span-12">
+	<FullColumn>
 		<Reveal delay={100}>
-			<Grid cols={2} gap="lg">
-				<ProjectCard
-					title="Project Alpha"
-					description="Brand identity & web design for tech startup"
-					year="2026"
-					tags={['Branding', 'Web Design']}
-					featured={true}
-				/>
-
-				<ProjectCard
-					title="Project Beta"
-					description="E-commerce platform redesign"
-					year="2026"
-					tags={['UX/UI', 'Development']}
-				/>
-
-				<ProjectCard
-					title="Project Gamma"
-					description="Mobile app design system"
-					year="2025"
-					tags={['Design System', 'Mobile']}
-				/>
-
-				<ProjectCard
-					title="Project Delta"
-					description="SaaS dashboard interface"
-					year="2025"
-					tags={['Interface', 'Data Viz']}
-				/>
-
-				<ProjectCard
-					title="Project Epsilon"
-					description="Marketing website for fintech company"
-					year="2025"
-					tags={['Web Design', 'Animation']}
-				/>
-			</Grid>
+			<div>
+				{#each projects as project, index}
+					<article>
+						<a href="/portfolio/{project.slug}">
+							<TwoColumn ratio="6-6">
+								{#snippet left()}
+									<TextBlock>
+										<h3>{project.title}</h3>
+										<p>{project.description}</p>
+									</TextBlock>
+								{/snippet}
+								{#snippet right()}
+									<TextBlock opacity={0.6}>
+										<p>
+											{project.year}<br />
+											{#if project.client}
+												{project.client}<br />
+											{/if}
+											{#if project.tags}
+												{project.tags.join(', ')}
+											{/if}
+										</p>
+									</TextBlock>
+								{/snippet}
+							</TwoColumn>
+						</a>
+					</article>
+					{#if index < projects.length - 1}
+						<Separator />
+					{/if}
+				{/each}
+			</div>
 		</Reveal>
-	</div>
+	</FullColumn>
 
-	<div class="col-span-12 flex justify-center mt-12">
-		<Reveal delay={200}>
-			<Button variant="secondary" size="lg">View All Projects</Button>
+	<CenteredColumn width="narrow">
+		<Reveal delay={300}>
+			<ButtonGroup align="center">
+				<Button variant="secondary" size="lg" href="/portfolio">View All Projects</Button>
+			</ButtonGroup>
 		</Reveal>
-	</div>
+	</CenteredColumn>
 </Section>
 
-<!-- CTA Section -->
-<Section padding="xl" background="inverted">
-	<div class="col-span-12 lg:col-span-8 lg:col-start-3 text-center">
+<Section padding="lg" border="bottom">
+	<FullColumn>
 		<Reveal>
-			<h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">Let's Work Together</h2>
-			<TextBlock size="lg" align="center" opacity={0.9} class="mb-8">
-				<p>
-					Available for freelance projects and collaborations. Let's create something exceptional.
-				</p>
-			</TextBlock>
-			<Button variant="inverted" size="lg">Contact Me</Button>
+			<SectionHeader title="Recent Writing" subtitle="Latest blog posts" rule="after" />
 		</Reveal>
-	</div>
+	</FullColumn>
+
+	<FullColumn>
+		<Reveal delay={100}>
+			<div>
+				{#each posts as post, index}
+					<article>
+						<a href="/blog/{post.slug}">
+							<TwoColumn ratio="8-4">
+								{#snippet left()}
+									<TextBlock>
+										<h3>{post.title}</h3>
+										<p>{post.description}</p>
+									</TextBlock>
+								{/snippet}
+								{#snippet right()}
+									<TextBlock opacity={0.6}>
+										<p>
+											{post.date}<br />
+											{#if post.tags}
+												{post.tags.join(', ')}
+											{/if}
+										</p>
+									</TextBlock>
+								{/snippet}
+							</TwoColumn>
+						</a>
+					</article>
+					{#if index < posts.length - 1}
+						<Separator />
+					{/if}
+				{/each}
+			</div>
+		</Reveal>
+	</FullColumn>
+
+	<CenteredColumn width="narrow">
+		<Reveal delay={300}>
+			<ButtonGroup align="center">
+				<Button variant="secondary" size="lg" href="/blog">View All Posts</Button>
+			</ButtonGroup>
+		</Reveal>
+	</CenteredColumn>
+</Section>
+
+<Section padding="xl" background="inverted">
+	<CenteredColumn width="medium">
+		<Reveal>
+			<TextBlock size="xl" align="center">
+				<h2>Let's Work Together</h2>
+				<p>Available for select projects and collaborations.</p>
+			</TextBlock>
+			<ButtonGroup align="center">
+				<Button variant="inverted" size="lg" href="/contact">Contact Me</Button>
+			</ButtonGroup>
+		</Reveal>
+	</CenteredColumn>
 </Section>

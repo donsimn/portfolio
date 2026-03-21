@@ -40,6 +40,9 @@ export { default as TwoColumn } from './TwoColumn.svelte';
 export { default as ThreeColumn } from './ThreeColumn.svelte';
 export { default as CenteredColumn } from './CenteredColumn.svelte';
 export { default as Spacer } from './Spacer.svelte';
+export { default as ButtonGroup } from './ButtonGroup.svelte';
+export { default as ProjectGrid } from './ProjectGrid.svelte';
+export { default as Separator } from './Separator.svelte';
 
 // Navigation
 export { default as Navigation } from './Navigation.svelte';
