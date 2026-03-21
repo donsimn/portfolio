@@ -29,6 +29,10 @@ export { default as SpecsList } from './SpecsList.svelte';
 export { default as InfoBox } from './InfoBox.svelte';
 export { default as DataRow } from './DataRow.svelte';
 
+// Media Components
+export { default as Image } from './Image.svelte';
+export { default as Gallery } from './Gallery.svelte';
+
 // Layout Components
 export { default as Column } from './Column.svelte';
 export { default as FullColumn } from './FullColumn.svelte';
