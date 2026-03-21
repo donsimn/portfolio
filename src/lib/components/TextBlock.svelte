@@ -108,4 +108,18 @@
 	:global(.dark) .text-block :global(code) {
 		background: rgba(255, 255, 255, 0.1);
 	}
+
+	.text-block :global(h3) {
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: -0.025em;
+		margin-bottom: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.text-block :global(h3) {
+			font-size: 1.875rem;
+		}
+	}
 </style>

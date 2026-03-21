@@ -23,5 +23,19 @@ export { default as InfoCard } from './InfoCard.svelte';
 export { default as TerminalLink } from './TerminalLink.svelte';
 export { default as CyberMetric } from './CyberMetric.svelte';
 
+// Article/Project Content Components
+export { default as MetadataCard } from './MetadataCard.svelte';
+export { default as SpecsList } from './SpecsList.svelte';
+export { default as InfoBox } from './InfoBox.svelte';
+export { default as DataRow } from './DataRow.svelte';
+
+// Layout Components
+export { default as Column } from './Column.svelte';
+export { default as FullColumn } from './FullColumn.svelte';
+export { default as TwoColumn } from './TwoColumn.svelte';
+export { default as ThreeColumn } from './ThreeColumn.svelte';
+export { default as CenteredColumn } from './CenteredColumn.svelte';
+export { default as Spacer } from './Spacer.svelte';
+
 // Navigation
 export { default as Navigation } from './Navigation.svelte';

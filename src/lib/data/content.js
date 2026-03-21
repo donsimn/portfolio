@@ -9,6 +9,15 @@
  */
 export const blogPosts = [
   {
+    slug: 'demystifying-buffer-overflows',
+    title: 'Demystifying Buffer Overflows',
+    date: '2026.03.21',
+    description:
+      'A technical breakdown of stack-based buffer overflow vulnerabilities, their exploitation mechanics, and modern mitigation strategies.',
+    thumbnail: '/images/blog/buffer-overflow.jpg',
+    tags: ['Security', 'Exploitation', 'Systems']
+  },
+  {
     slug: 'swiss-design-principles',
     title: 'The Timeless Beauty of Swiss Design Principles',
     date: '2026.03.15',
@@ -60,6 +69,17 @@ export const blogPosts = [
  * @type {Array<{slug: string, title: string, date: string, description: string, thumbnail?: string, tags?: string[], client?: string, year?: string}>}
  */
 export const portfolioProjects = [
+  {
+    slug: 'fpv-drone-build',
+    title: 'Custom FPV Racing Drone Build',
+    date: '2026.03.20',
+    description:
+      'Ground-up custom FPV drone build featuring hand-soldered components, firmware tuning, and iterative hardware refinement from V1 to V2.',
+    thumbnail: '/images/portfolio/fpv-drone.jpg',
+    tags: ['Hardware', 'FPV', 'Electronics'],
+    client: 'Personal Project',
+    year: '2026'
+  },
   {
     slug: 'techcorp-rebrand',
     title: 'TechCorp Brand Identity Redesign',
