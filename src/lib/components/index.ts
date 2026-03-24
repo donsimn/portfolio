@@ -46,3 +46,6 @@ export { default as Separator } from './Separator.svelte';
 
 // Navigation
 export { default as Navigation } from './Navigation.svelte';
+
+// Data Display Components
+export { default as Table } from './Table.svelte';

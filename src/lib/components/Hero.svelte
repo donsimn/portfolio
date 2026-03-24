@@ -18,7 +18,7 @@
 		imageAlt = '',
 		align = 'left',
 		height = 'default',
-		overlay = false,
+		overlay = true,
 		children,
 		class: className = ''
 	}: Props = $props();
@@ -43,7 +43,7 @@
 		<div class="absolute inset-0 z-0">
 			<img src={image} alt={imageAlt} class="w-full h-full object-cover" />
 			{#if overlay}
-				<div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+				<div class="absolute inset-0 bg-black/70 dark:bg-black/80"></div>
 			{/if}
 		</div>
 	{/if}
@@ -85,5 +85,10 @@
 	.hero-title {
 		word-break: break-word;
 		hyphens: auto;
+	}
+
+	.hero:has(img) .hero-title,
+	.hero:has(img) .hero-subtitle {
+		text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 	}
 </style>

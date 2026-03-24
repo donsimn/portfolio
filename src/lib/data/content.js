@@ -76,9 +76,29 @@ export const portfolioProjects = [
     description:
       'BRGOS is the operating system I developed for our Vex V5 team Big Red Gears\' robot, which competed twice at the Swiss National Robotics Competition.',
     thumbnail: '/images/BRGOS4.jpeg',
-    tags: ['Robotics', 'C++', 'Colaboration'],
+    tags: ['Robotics', 'C++', 'Collaboration'],
     client: 'Team Big Red Gears',
     year: '2024'
+  },
+  {
+    slug: 'fpv-drone',
+    title: '5" FPV Drone',
+    date: 'Mar 2025 - Apr 2026',
+    description: 'A hands-on build that evolved through rapid iteration: soldering, CAD changes, firmware tuning, radio upgrades, and a full power-system redesign.',
+    thumbnail: '',
+    tags: ['Soldering', 'Iterative Design', 'Betaflight'],
+    client: 'Personal Project',
+    year: '2025'
+  },
+  {
+    slug: 'electric-trike',
+    title: 'Electric Trike',
+    date: 'Nov 2023 - May 2024',
+    description: 'Mechanical fixes, battery and power-system upgrades, advanced controller tuning, and a lot of late-night soldering.',
+    thumbnail: '',
+    tags: ['Mechanical Engineering', 'Soldering', 'Baserunner'],
+    client: 'Personal Project',
+    year: '2023'
   }
 ];
 

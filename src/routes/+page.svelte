@@ -29,7 +29,7 @@
 
 <Hero
   title="Simonas Zabulionis"
-  subtitle="Systems Engineer / Cyber Defense Scholar"
+  subtitle="Systems Engineer / Cyber Defense Specialist"
   height="tall"
 >
   <ButtonGroup align="left" gap="md">
@@ -41,11 +41,7 @@
 <Section padding="lg" border="bottom">
   <FullColumn>
     <Reveal>
-      <SectionHeader
-        title="About"
-        subtitle="Creating precise, functional digital experiences"
-        rule="after"
-      />
+      <SectionHeader title="About" rule="after" />
     </Reveal>
   </FullColumn>
 
@@ -54,14 +50,17 @@
       <Reveal delay={100}>
         <TextBlock size="lg" opacity={0.8}>
           <p>
-            I specialize in creating digital products that combine Swiss design
-            principles with modern web technologies. Every project is built with
-            attention to detail, mathematical precision, and a focus on user
-            experience.
+            At age 10 I wrote my first computer program on Notepad++. My passion
+            for systems evolved quickly; within a year, I was invited to join a
+            development team, where I began my journey into professional
+            software development by building paid Discord bot features.
           </p>
           <p>
-            My approach emphasizes clarity, hierarchy, and functional beauty. No
-            unnecessary ornamentation—just pure, purposeful design.
+            Now 17, I am in my second year at Gymnasium Münchenstein while
+            working as a teacher's assistant and all-rounder at TechLabs Basel.
+            My focus has since shifted toward cybersecurity. I am heavily
+            invested in the field and am currently sharpening my technical
+            skills through the Swiss Army's SPARC program.
           </p>
         </TextBlock>
       </Reveal>
@@ -71,10 +70,10 @@
         <TextBlock opacity={0.6}>
           <p>
             <strong>Expertise</strong><br />
-            Brand Identity<br />
-            Web Design<br />
-            Development<br />
-            Design Systems
+            Cybersecurity<br />
+            Applied AI Engineering<br />
+            System Design<br />
+            Languages
           </p>
         </TextBlock>
       </Reveal>
