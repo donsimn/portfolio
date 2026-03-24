@@ -51,12 +51,12 @@
         <TextBlock size="lg" opacity={0.8}>
           <p>
             At age 10 I wrote my first computer program on Notepad++. My passion
-            for systems evolved quickly; within a year, I was invited to join a
-            development team, where I began my journey into professional
-            software development by building paid Discord bot features.
+            for systems evolved quickly; Within a year I joined a development
+            team and began building paid Discord bot features, where I got my
+            first taste of professional software work.
           </p>
           <p>
-            Now 17, I am in my second year at Gymnasium Münchenstein while
+            Now at 17, I am in my second year at Gymnasium Münchenstein while
             working as a teacher's assistant and all-rounder at TechLabs Basel.
             My focus has since shifted toward cybersecurity. I am heavily
             invested in the field and am currently sharpening my technical

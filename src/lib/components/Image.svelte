@@ -3,7 +3,7 @@
 		src: string;
 		alt: string;
 		caption?: string;
-		aspectRatio?: '16/9' | '4/3' | '1/1' | '3/2' | 'auto';
+		aspectRatio?: '16/9' | '4/3' | '1/1' | '3/2' | '2/3' | 'auto';
 		fit?: 'cover' | 'contain' | 'fill';
 		border?: boolean;
 		class?: string;
@@ -24,6 +24,7 @@
 		'4/3': 'aspect-[4/3]',
 		'1/1': 'aspect-square',
 		'3/2': 'aspect-[3/2]',
+		'2/3': 'aspect-[2/3]',
 		auto: ''
 	};
 
