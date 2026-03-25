@@ -21,10 +21,6 @@
 
 <svelte:head>
   <title>Portfolio — Simonas Z</title>
-  <meta
-    name="description"
-    content="Designer and developer focused on Swiss design principles, precision, and functional beauty."
-  />
 </svelte:head>
 
 <Hero
