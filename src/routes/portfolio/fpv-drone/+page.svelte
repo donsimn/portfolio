@@ -5,7 +5,6 @@
     Section,
     SectionHeader,
     TextBlock,
-    Reveal,
     MetadataCard,
     SpecsList,
     InfoBox,
@@ -13,7 +12,6 @@
   import FullColumn from "$lib/components/FullColumn.svelte";
   import Table from "$lib/components/Table.svelte";
   import TwoColumn from "$lib/components/TwoColumn.svelte";
-  import { onMount } from "svelte";
 
   const metadata = [
     { label: "Completed", value: "04.2025" },
@@ -40,29 +38,23 @@
 <Section padding="lg" border="bottom">
   <TwoColumn ratio="8-4">
     {#snippet left()}
-      <Reveal>
-        <TextBlock size="sm" opacity={0.8}>
-          I started this project with an entry-level F4 FC/ESC stack from
-          AliExpress and a 3D-printed PLA frame. Carbon-fiber PLA prints, an
-          ELRS radio and UART receiver, a Walksnail Avatar HD video system, and
-          ultimately a used 5" carbon frame with 1800KV motors and 6S batteries
-          were all added to the build over the course of several months.
-        </TextBlock>
-      </Reveal>
+      <TextBlock size="sm" opacity={0.8}>
+        I started this project with an entry-level F4 FC/ESC stack from
+        AliExpress and a 3D-printed PLA frame. Carbon-fiber PLA prints, an
+        ELRS radio and UART receiver, a Walksnail Avatar HD video system, and
+        ultimately a used 5" carbon frame with 1800KV motors and 6S batteries
+        were all added to the build over the course of several months.
+      </TextBlock>
     {/snippet}
     {#snippet right()}
-      <Reveal delay={100}>
-        <MetadataCard items={metadata} />
-      </Reveal>
+      <MetadataCard items={metadata} />
     {/snippet}
   </TwoColumn>
 </Section>
 
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <Reveal>
-      <SectionHeader title="Specs Evolution" />
-    </Reveal>
+    <SectionHeader title="Specs Evolution" />
   </FullColumn>
   <TwoColumn>
     {#snippet left()}

@@ -18,7 +18,10 @@
     try {
       const res = await fetch("https://formspree.io/f/mqegydbj", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
           name: formState.name,
           email: formState.email,
@@ -47,160 +50,150 @@
 <!-- Page Header -->
 <Section padding="lg" border="bottom">
   <div class="col-span-12">
-    <Reveal>
-      <h1
-        class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6"
-      >
-        Contact
-      </h1>
-      <p class="text-xl md:text-2xl opacity-70 max-w-3xl">
-        Available for select projects and collaborations.
-      </p>
-    </Reveal>
+    <h1
+      class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6"
+    >
+      Contact
+    </h1>
+    <p class="text-xl md:text-2xl opacity-70 max-w-3xl">
+      Available for select projects and collaborations.
+    </p>
   </div>
 </Section>
 
 <!-- Contact Form Section -->
 <Section padding="lg">
   <div class="col-span-12 lg:col-span-8 lg:col-start-3">
-    <Reveal delay={100}>
-      {#if formState.submitted}
-        <!-- Success State -->
-        <div class="text-center py-16">
-          <div class="inline-block mb-6">
-            <span
-              class="font-mono text-sm uppercase tracking-wider px-4 py-2 border-2 border-green-600 dark:border-green-400 text-green-600 dark:text-green-400"
-            >
-              [MESSAGE SENT]
-            </span>
-          </div>
-          <p class="text-lg opacity-70">
-            Thank you for reaching out. I'll get back to you soon.
-          </p>
+    {#if formState.submitted}
+      <!-- Success State -->
+      <div class="text-center py-16">
+        <div class="inline-block mb-6">
+          <span
+            class="font-mono text-sm uppercase tracking-wider px-4 py-2 border-2 border-green-600 dark:border-green-400 text-green-600 dark:text-green-400"
+          >
+            [MESSAGE SENT]
+          </span>
         </div>
-      {:else}
-        <!-- Contact Form -->
-        <form onsubmit={handleSubmit} class="contact-form space-y-12">
-          <!-- Name Field -->
-          <div class="form-group">
-            <label
-              for="name"
-              class="font-mono text-xs uppercase tracking-widest opacity-40 mb-4 block"
-            >
-              [01] Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              bind:value={formState.name}
-              required
-              class="form-input"
-              placeholder="Your name"
-            />
-          </div>
+        <p class="text-lg opacity-70">
+          Thank you for reaching out. I'll get back to you soon.
+        </p>
+      </div>
+    {:else}
+      <!-- Contact Form -->
+      <form onsubmit={handleSubmit} class="contact-form space-y-12">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label
+            for="name"
+            class="font-mono text-xs uppercase tracking-widest opacity-40 mb-4 block"
+          >
+            [01] Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            bind:value={formState.name}
+            required
+            class="form-input"
+            placeholder="Your name"
+          />
+        </div>
 
-          <!-- Email Field -->
-          <div class="form-group">
-            <label
-              for="email"
-              class="font-mono text-xs uppercase tracking-widest opacity-40 mb-4 block"
-            >
-              [02] Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              bind:value={formState.email}
-              required
-              class="form-input"
-              placeholder="your@email.com"
-            />
-          </div>
+        <!-- Email Field -->
+        <div class="form-group">
+          <label
+            for="email"
+            class="font-mono text-xs uppercase tracking-widest opacity-40 mb-4 block"
+          >
+            [02] Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            bind:value={formState.email}
+            required
+            class="form-input"
+            placeholder="your@email.com"
+          />
+        </div>
 
-          <!-- Message Field -->
-          <div class="form-group">
-            <label
-              for="message"
-              class="font-mono text-xs uppercase tracking-widest opacity-40 mb-4 block"
-            >
-              [03] Message
-            </label>
-            <textarea
-              id="message"
-              bind:value={formState.message}
-              required
-              rows="6"
-              class="form-input resize-none"
-              placeholder="Tell me about your project"
-            ></textarea>
-          </div>
+        <!-- Message Field -->
+        <div class="form-group">
+          <label
+            for="message"
+            class="font-mono text-xs uppercase tracking-widest opacity-40 mb-4 block"
+          >
+            [03] Message
+          </label>
+          <textarea
+            id="message"
+            bind:value={formState.message}
+            required
+            rows="6"
+            class="form-input resize-none"
+            placeholder="Tell me about your project"
+          ></textarea>
+        </div>
 
-          <!-- Submit Button -->
-          <div class="pt-4 space-y-4">
-            <button
-              type="submit"
-              disabled={formState.submitting}
-              class="submit-btn font-mono text-sm uppercase tracking-wider px-8 py-4 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              {formState.submitting ? "[SENDING...]" : "[SEND MESSAGE]"}
-            </button>
-            {#if formState.error}
-              <p class="font-mono text-sm text-red-500 dark:text-red-400">
-                Something went wrong. Please try again or email me directly.
-              </p>
-            {/if}
-          </div>
-        </form>
-      {/if}
-    </Reveal>
+        <!-- Submit Button -->
+        <div class="pt-4 space-y-4">
+          <button
+            type="submit"
+            disabled={formState.submitting}
+            class="submit-btn font-mono text-sm uppercase tracking-wider px-8 py-4 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {formState.submitting ? "[SENDING...]" : "[SEND MESSAGE]"}
+          </button>
+          {#if formState.error}
+            <p class="font-mono text-sm text-red-500 dark:text-red-400">
+              Something went wrong. Please try again or email me directly.
+            </p>
+          {/if}
+        </div>
+      </form>
+    {/if}
   </div>
 
   <!-- Contact Info -->
   <div
     class="col-span-12 lg:col-span-8 lg:col-start-3 mt-16 pt-16 border-t-2 border-gray-200 dark:border-gray-800"
   >
-    <Reveal delay={200}>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h3
-            class="font-mono text-xs uppercase tracking-widest opacity-40 mb-3"
-          >
-            Email
-          </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-widest opacity-40 mb-3">
+          Email
+        </h3>
+        <a
+          href="mailto:simonas.zabulionis@icloud.com"
+          class="text-lg hover:opacity-60 transition-opacity font-mono"
+        >
+          simonas.zabulionis@icloud.com
+        </a>
+      </div>
+      <div>
+        <h3 class="font-mono text-xs uppercase tracking-widest opacity-40 mb-3">
+          Social
+        </h3>
+        <div class="space-y-2">
           <a
-            href="mailto:simonas.zabulionis@icloud.com"
-            class="text-lg hover:opacity-60 transition-opacity font-mono"
+            href="https://github.com/donsimn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-lg hover:opacity-60 transition-opacity"
           >
-            simonas.zabulionis@icloud.com
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/simonas-zabulionis-8a4aa8373"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-lg hover:opacity-60 transition-opacity"
+          >
+            LinkedIn
           </a>
         </div>
-        <div>
-          <h3
-            class="font-mono text-xs uppercase tracking-widest opacity-40 mb-3"
-          >
-            Social
-          </h3>
-          <div class="space-y-2">
-            <a
-              href="https://github.com/donsimn"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block text-lg hover:opacity-60 transition-opacity"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/simonas-zabulionis-8a4aa8373"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block text-lg hover:opacity-60 transition-opacity"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
       </div>
-    </Reveal>
+    </div>
   </div>
 </Section>
 

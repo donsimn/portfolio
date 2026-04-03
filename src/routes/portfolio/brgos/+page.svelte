@@ -4,7 +4,6 @@
     Section,
     SectionHeader,
     TextBlock,
-    Reveal,
     MetadataCard,
     SpecsList,
     InfoBox,
@@ -34,25 +33,21 @@
 <!-- Project Overview -->
 <Section padding="lg" border="bottom">
   <div class="col-span-12 lg:col-span-8">
-    <Reveal>
-      <TextBlock size="sm" opacity={0.8}>
-        <p>
-          My main role in the team was developing and maintaining the OS. I
-          worked in a continuous feedback loop with our driver and engineer
-          Jaques to refine the robots controls.
-        </p>
-        <p>
-          I also helped designing and building the robot by diagnosing
-          mechanical failure points, including stabilizing gears to prevent
-          grinding under high torque.
-        </p>
-      </TextBlock>
-    </Reveal>
+    <TextBlock size="sm" opacity={0.8}>
+      <p>
+        My main role in the team was developing and maintaining the OS. I
+        worked in a continuous feedback loop with our driver and engineer
+        Jaques to refine the robots controls.
+      </p>
+      <p>
+        I also helped designing and building the robot by diagnosing
+        mechanical failure points, including stabilizing gears to prevent
+        grinding under high torque.
+      </p>
+    </TextBlock>
   </div>
 
   <div class="col-span-12 lg:col-span-4">
-    <Reveal delay={100}>
-      <MetadataCard items={metadata} />
-    </Reveal>
+    <MetadataCard items={metadata} />
   </div>
 </Section>

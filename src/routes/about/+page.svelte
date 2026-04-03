@@ -22,10 +22,15 @@
     { label: "Location", value: "Basel, Switzerland" },
     { label: "Education", value: "Gymnasium Münchenstein" },
     { label: "Role", value: "TA @ TechLabs Basel" },
-    {
-      label: "Languages",
-      value: "DE · EN · CHde · LT (B2) · FR (B1) · RU (A1)",
-    },
+  ];
+
+  const languages = [
+    { label: "Lithuanian", value: "Mother tongue" },
+    { label: "German", value: "Fluent" },
+    { label: "English", value: "Fluent" },
+    { label: "Swiss German", value: "Fluent" },
+    { label: "French", value: "Intermediate" },
+    { label: "Russian", value: "Beginner" },
   ];
 </script>
 
@@ -44,37 +49,39 @@
 <Section padding="lg" border="bottom">
   <TwoColumn ratio="4-8">
     {#snippet left()}
-      <Reveal>
-        <Image
-          src="/images/simonas1.jpg"
-          alt="Simonas Zabulionis"
-          aspectRatio="2/3"
-          fit="cover"
-          border={true}
-          caption="Solothurn, 2026"
-        />
-      </Reveal>
+      <Image
+        src="/images/simonas1.jpg"
+        alt="Simonas Zabulionis"
+        aspectRatio="2/3"
+        fit="cover"
+        border={true}
+        caption="Solothurn, 2026"
+      />
     {/snippet}
     {#snippet right()}
-      <Reveal delay={100}>
-        <TextBlock size="lg">
-          <p>
-            At age 12 I wrote my first computer program on Notepad++. My passion
-            for systems evolved quickly; Within a year I joined a development
-            team and began building paid Discord bot features, where I got my
-            first taste of professional software work.
-          </p>
-          <p>
-            Now at 17, I am in my second year at Gymnasium Münchenstein while
-            working as a teacher's assistant and all-rounder at TechLabs Basel.
-            My focus has since shifted toward cybersecurity. I am heavily
-            invested in the field and am currently sharpening my technical
-            skills through the Swiss Army's SPARC program.
-          </p>
-        </TextBlock>
-        <Separator spacing="sm" />
-        <SpecsList items={quickFacts} />
-      </Reveal>
+      <TextBlock size="lg">
+        <p>
+          At age 12 I wrote my first computer program on Notepad++. My passion
+          for systems evolved quickly; Within a year I joined a development team
+          and began building paid Discord bot features, where I got my first
+          taste of professional software work.
+        </p>
+        <p>
+          Now at 17, I am in my second year at Gymnasium Münchenstein while
+          working as a teacher's assistant and all-rounder at TechLabs Basel. My
+          focus has since shifted toward cybersecurity. I am heavily invested in
+          the field and am currently sharpening my technical skills through the
+          Swiss Army's SPARC program.
+        </p>
+      </TextBlock>
+      <Separator spacing="sm" />
+      <SpecsList items={quickFacts} />
+      <p
+        class="font-mono text-xs uppercase tracking-widest opacity-40 mt-6 mb-3"
+      >
+        Languages
+      </p>
+      <SpecsList items={languages} />
     {/snippet}
   </TwoColumn>
 </Section>
@@ -82,7 +89,6 @@
 <!--
 <Section padding="lg" border="bottom">
   <CenteredColumn width="medium">
-    <Reveal>
       <TextBlock size="md">
         <p>
           My technical foundation was built through years of self-directed study
@@ -97,7 +103,6 @@
           document this thinking through writing and share it here.
         </p>
       </TextBlock>
-    </Reveal>
   </CenteredColumn>
 </Section>
 -->
@@ -105,19 +110,17 @@
 <!-- CTA -->
 <Section padding="xl" background="inverted">
   <CenteredColumn width="medium">
-    <Reveal>
-      <TextBlock size="lg">
-        <h2>Let's work together</h2>
-        <p>
-          Available for select projects, research collaborations, and
-          internships. Get in touch to start a conversation.
-        </p>
-      </TextBlock>
-      <Spacer size="sm" />
-      <ButtonGroup align="left">
-        <Button href="/contact" variant="inverted" size="lg">Contact</Button>
-        <Button href="/portfolio" variant="ghost" size="lg">View Work</Button>
-      </ButtonGroup>
-    </Reveal>
+    <TextBlock size="lg">
+      <h2>Let's work together</h2>
+      <p>
+        Available for select projects, research collaborations, and internships.
+        Get in touch to start a conversation.
+      </p>
+    </TextBlock>
+    <Spacer size="sm" />
+    <ButtonGroup align="left">
+      <Button href="/contact" variant="inverted" size="lg">Contact</Button>
+      <Button href="/portfolio" variant="ghost" size="lg">View Work</Button>
+    </ButtonGroup>
   </CenteredColumn>
 </Section>

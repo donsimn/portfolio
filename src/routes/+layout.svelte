@@ -13,10 +13,10 @@
   let { children } = $props();
   let darkMode = $state(false);
 
-  // Initialize dark mode from localStorage
+  // Initialize dark mode from localStorage, defaulting to dark
   onMount(() => {
     const stored = localStorage.getItem("darkMode");
-    darkMode = stored === "true";
+    darkMode = stored === null ? true : stored === "true";
     updateDarkMode();
   });
 

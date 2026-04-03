@@ -25,6 +25,7 @@
 
 <svelte:head>
   <title>Portfolio — Simonas Z</title>
+  <link rel="prefetch" as="image" href="/images/simonas1.jpg" />
 </svelte:head>
 
 <Hero
@@ -40,138 +41,119 @@
 
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <Reveal>
-      <SectionHeader title="About" rule="after" />
-    </Reveal>
+    <SectionHeader title="About" rule="after" />
   </FullColumn>
 
   <TwoColumn ratio="8-4">
     {#snippet left()}
-      <Reveal delay={100}>
-        <TextBlock size="lg" opacity={0.8}>
-          <p>
-            At age 12 I wrote my first computer program on Notepad++. My passion
-            for systems evolved quickly; Within a year I joined a development
-            team and began building paid Discord bot features, where I got my
-            first taste of professional software work.
-          </p>
-          <p>
-            Now, at 17, I am in my second year at Gymnasium Münchenstein while
-            working as a teacher's assistant and all-rounder at TechLabs Basel.
-            My focus has since shifted toward cybersecurity. I am heavily
-            invested in the field and am currently sharpening my technical
-            skills through the Swiss Army's SPARC program.
-          </p>
-        </TextBlock>
-      </Reveal>
+      <TextBlock size="lg" opacity={0.8}>
+        <p>
+          At age 12 I wrote my first computer program on Notepad++. My passion
+          for systems evolved quickly; Within a year I joined a development team
+          and began building paid Discord bot features, where I got my first
+          taste of professional software work.
+        </p>
+        <p>
+          Now, at 17, I am in my second year at Gymnasium Münchenstein while
+          working as a teacher's assistant and all-rounder at TechLabs Basel. My
+          focus has since shifted toward cybersecurity. I am heavily invested in
+          the field and am currently sharpening my technical skills through the
+          Swiss Army's SPARC program.
+        </p>
+      </TextBlock>
     {/snippet}
     {#snippet right()}
-      <Reveal delay={200}>
-        <TextBlock opacity={0.6}>
-          <p>
-            <strong>Expertise</strong><br />
-            Cybersecurity<br />
-            Applied AI Engineering<br />
-            System Design<br />
-            Languages
-          </p>
-        </TextBlock>
-      </Reveal>
+      <TextBlock opacity={0.6}>
+        <p>
+          <strong>Expertise</strong><br />
+          Cybersecurity<br />
+          Applied AI Engineering<br />
+          System Design<br />
+          Languages
+        </p>
+      </TextBlock>
     {/snippet}
   </TwoColumn>
 </Section>
 
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <Reveal>
-      <SectionHeader
-        title="Recognition & Experience"
-        subtitle="Competitions, programs, and milestones"
-        rule="after"
-      />
-    </Reveal>
+    <SectionHeader
+      title="Recognition & Experience"
+      subtitle="Competitions, programs, and milestones"
+      rule="after"
+    />
   </FullColumn>
 
   <FullColumn>
-    <Reveal delay={100}>
-      <BentoAchievements />
-    </Reveal>
+    <BentoAchievements />
   </FullColumn>
 </Section>
 
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <Reveal>
-      <SectionHeader
-        title="Selected Work"
-        subtitle="Featured projects"
-        rule="after"
-      />
-    </Reveal>
+    <SectionHeader
+      title="Selected Work"
+      subtitle="Featured projects"
+      rule="after"
+    />
   </FullColumn>
 
   <FullColumn>
-    <Reveal delay={100}>
-      <div>
-        {#each projects as project, index}
-          <article>
-            <a href="/portfolio/{project.slug}">
-              <TwoColumn ratio="6-6">
-                {#snippet left()}
-                  <TextBlock>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </TextBlock>
-                {/snippet}
-                {#snippet right()}
-                  <TextBlock opacity={0.6}>
-                    <p>
-                      {project.year}<br />
-                      {#if project.client}
-                        {project.client}<br />
-                      {/if}
-                      {#if project.tags}
-                        {project.tags.join(", ")}
-                      {/if}
-                    </p>
-                  </TextBlock>
-                {/snippet}
-              </TwoColumn>
-            </a>
-          </article>
-          {#if index < projects.length - 1}
-            <Separator />
-          {/if}
-        {/each}
-      </div>
-    </Reveal>
+    <div>
+      {#each projects as project, index}
+        <article>
+          <a href="/portfolio/{project.slug}">
+            <TwoColumn ratio="6-6">
+              {#snippet left()}
+                <TextBlock>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </TextBlock>
+              {/snippet}
+              {#snippet right()}
+                <TextBlock opacity={0.6}>
+                  <p>
+                    {project.year}<br />
+                    {#if project.client}
+                      {project.client}<br />
+                    {/if}
+                    {#if project.tags}
+                      {project.tags.join(", ")}
+                    {/if}
+                  </p>
+                </TextBlock>
+              {/snippet}
+            </TwoColumn>
+          </a>
+        </article>
+        {#if index < projects.length - 1}
+          <Separator />
+        {/if}
+      {/each}
+    </div>
   </FullColumn>
 
   <CenteredColumn width="narrow">
-    <Reveal delay={300}>
-      <ButtonGroup align="center">
-        <Button variant="secondary" size="lg" href="/portfolio"
-          >View All Projects</Button
-        >
-      </ButtonGroup>
-    </Reveal>
+    <ButtonGroup align="center">
+      <Button variant="secondary" size="lg" href="/portfolio"
+        >View All Projects</Button
+      >
+    </ButtonGroup>
   </CenteredColumn>
 </Section>
 
 <!--
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <Reveal>
       <SectionHeader
         title="Recent Writing"
         subtitle="Latest blog posts"
         rule="after"
       />
-    </Reveal>
   </FullColumn>
 
   <FullColumn>
-    <Reveal delay={100}>
       <div>
         {#each posts as post, index}
           <article>
@@ -201,32 +183,27 @@
           {/if}
         {/each}
       </div>
-    </Reveal>
   </FullColumn>
 
   <CenteredColumn width="narrow">
-    <Reveal delay={300}>
       <ButtonGroup align="center">
         <Button variant="secondary" size="lg" href="/blog"
           >View All Posts</Button
         >
       </ButtonGroup>
-    </Reveal>
   </CenteredColumn>
 </Section>
 -->
 
 <Section padding="xl" background="inverted">
   <CenteredColumn width="medium">
-    <Reveal>
-      <TextBlock size="xl" align="center">
-        <h2>Let's Work Together</h2>
-        <p>Available for select projects and collaborations.</p>
-      </TextBlock>
-      <Spacer size="md" />
-      <ButtonGroup align="center">
-        <Button variant="inverted" size="lg" href="/contact">Contact Me</Button>
-      </ButtonGroup>
-    </Reveal>
+    <TextBlock size="xl" align="center">
+      <h2>Let's Work Together</h2>
+      <p>Available for select projects and collaborations.</p>
+    </TextBlock>
+    <Spacer size="md" />
+    <ButtonGroup align="center">
+      <Button variant="inverted" size="lg" href="/contact">Contact Me</Button>
+    </ButtonGroup>
   </CenteredColumn>
 </Section>

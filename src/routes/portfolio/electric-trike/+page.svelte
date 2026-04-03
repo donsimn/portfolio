@@ -4,7 +4,6 @@
     Section,
     SectionHeader,
     TextBlock,
-    Reveal,
     MetadataCard,
     SpecsList,
     InfoBox,
@@ -38,34 +37,28 @@
 <!-- Project Overview -->
 <Section padding="lg" border="bottom">
   <div class="col-span-12 lg:col-span-8">
-    <Reveal>
-      <TextBlock size="sm" opacity={0.8}>
-        <p>
-          I was bored on my phone browsing through Facebook Marketplace when a
-          particular listing caught my attention. Two adult-sized drift trikes
-          made for riding down hills for only 200 CHF!
-        </p>
-        <p>
-          That was the start of a 4 month journey full of late-night soldering,
-          prototyping, wiring and researching, which resulted in a fully
-          electric trike, balancing comfort, performace and reliability.
-        </p>
-      </TextBlock>
-    </Reveal>
+    <TextBlock size="sm" opacity={0.8}>
+      <p>
+        I was bored on my phone browsing through Facebook Marketplace when a
+        particular listing caught my attention. Two adult-sized drift trikes
+        made for riding down hills for only 200 CHF!
+      </p>
+      <p>
+        That was the start of a 4 month journey full of late-night soldering,
+        prototyping, wiring and researching, which resulted in a fully
+        electric trike, balancing comfort, performace and reliability.
+      </p>
+    </TextBlock>
   </div>
 
   <div class="col-span-12 lg:col-span-4">
-    <Reveal delay={100}>
-      <MetadataCard items={metadata} />
-    </Reveal>
+    <MetadataCard items={metadata} />
   </div>
 </Section>
 
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <Reveal>
-      <SectionHeader title="Specs Evolution" />
-    </Reveal>
+    <SectionHeader title="Specs Evolution" />
   </FullColumn>
   <TwoColumn>
     {#snippet left()}

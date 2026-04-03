@@ -4,7 +4,6 @@
     Section,
     SectionHeader,
     TextBlock,
-    Reveal,
     MetadataCard,
     SpecsList,
     InfoBox,
@@ -37,21 +36,17 @@
 <Section padding="lg" border="bottom">
   <TwoColumn ratio="8-4">
     {#snippet left()}
-      <Reveal>
-        <TextBlock size="sm" opacity={0.8}>
-          <p>
-            Problem Management means manually reviewing large volumes of
-            incident data to identify root causes. The goal of this project was
-            automating this time consuming task using LLMs and a vector
-            database.
-          </p>
-        </TextBlock>
-      </Reveal>
+      <TextBlock size="sm" opacity={0.8}>
+        <p>
+          Problem Management means manually reviewing large volumes of
+          incident data to identify root causes. The goal of this project was
+          automating this time consuming task using LLMs and a vector
+          database.
+        </p>
+      </TextBlock>
     {/snippet}
     {#snippet right()}
-      <Reveal delay={100}>
-        <MetadataCard items={metadata} />
-      </Reveal>
+      <MetadataCard items={metadata} />
     {/snippet}
   </TwoColumn>
 </Section>
