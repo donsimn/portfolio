@@ -14,6 +14,7 @@
     Table,
     AchievementList,
     BentoAchievements,
+    Spacer,
   } from "$lib/components";
 
   /** @type {import('./$types').PageData} */
@@ -157,6 +158,7 @@
   </CenteredColumn>
 </Section>
 
+<!--
 <Section padding="lg" border="bottom">
   <FullColumn>
     <Reveal>
@@ -212,6 +214,7 @@
     </Reveal>
   </CenteredColumn>
 </Section>
+-->
 
 <Section padding="xl" background="inverted">
   <CenteredColumn width="medium">
@@ -220,6 +223,7 @@
         <h2>Let's Work Together</h2>
         <p>Available for select projects and collaborations.</p>
       </TextBlock>
+      <Spacer size="md" />
       <ButtonGroup align="center">
         <Button variant="inverted" size="lg" href="/contact">Contact Me</Button>
       </ButtonGroup>
