@@ -6,13 +6,36 @@
     email: "",
     message: "",
     submitted: false,
+    error: false,
+    submitting: false,
   });
 
-  function handleSubmit(e: Event) {
+  async function handleSubmit(e: Event) {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formState);
-    formState.submitted = true;
+    formState.submitting = true;
+    formState.error = false;
+
+    try {
+      const res = await fetch("https://formspree.io/f/mqegydbj", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (res.ok) {
+        formState.submitted = true;
+      } else {
+        formState.error = true;
+      }
+    } catch {
+      formState.error = true;
+    } finally {
+      formState.submitting = false;
+    }
   }
 </script>
 
@@ -113,13 +136,19 @@
           </div>
 
           <!-- Submit Button -->
-          <div class="pt-4">
+          <div class="pt-4 space-y-4">
             <button
               type="submit"
-              class="submit-btn font-mono text-sm uppercase tracking-wider px-8 py-4 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200"
+              disabled={formState.submitting}
+              class="submit-btn font-mono text-sm uppercase tracking-wider px-8 py-4 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              [SEND MESSAGE]
+              {formState.submitting ? "[SENDING...]" : "[SEND MESSAGE]"}
             </button>
+            {#if formState.error}
+              <p class="font-mono text-sm text-red-500 dark:text-red-400">
+                Something went wrong. Please try again or email me directly.
+              </p>
+            {/if}
           </div>
         </form>
       {/if}
