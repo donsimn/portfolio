@@ -3,9 +3,12 @@
   import Navigation from "$lib/components/Navigation.svelte";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
-  import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 
+  import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
+  import { dev } from "$app/environment";
+  import { injectAnalytics } from "@vercel/analytics/sveltekit";
   injectSpeedInsights();
+  injectAnalytics({ mode: dev ? "development" : "production" });
 
   let { children } = $props();
   let darkMode = $state(false);
