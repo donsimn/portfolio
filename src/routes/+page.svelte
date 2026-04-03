@@ -11,6 +11,9 @@
     TwoColumn,
     CenteredColumn,
     Separator,
+    Table,
+    AchievementList,
+    BentoAchievements,
   } from "$lib/components";
 
   /** @type {import('./$types').PageData} */
@@ -46,13 +49,13 @@
       <Reveal delay={100}>
         <TextBlock size="lg" opacity={0.8}>
           <p>
-            At age 10 I wrote my first computer program on Notepad++. My passion
+            At age 12 I wrote my first computer program on Notepad++. My passion
             for systems evolved quickly; Within a year I joined a development
             team and began building paid Discord bot features, where I got my
             first taste of professional software work.
           </p>
           <p>
-            Now at 17, I am in my second year at Gymnasium Münchenstein while
+            Now, at 17, I am in my second year at Gymnasium Münchenstein while
             working as a teacher's assistant and all-rounder at TechLabs Basel.
             My focus has since shifted toward cybersecurity. I am heavily
             invested in the field and am currently sharpening my technical
@@ -75,6 +78,24 @@
       </Reveal>
     {/snippet}
   </TwoColumn>
+</Section>
+
+<Section padding="lg" border="bottom">
+  <FullColumn>
+    <Reveal>
+      <SectionHeader
+        title="Recognition & Experience"
+        subtitle="Competitions, programs, and milestones"
+        rule="after"
+      />
+    </Reveal>
+  </FullColumn>
+
+  <FullColumn>
+    <Reveal delay={100}>
+      <BentoAchievements />
+    </Reveal>
+  </FullColumn>
 </Section>
 
 <Section padding="lg" border="bottom">

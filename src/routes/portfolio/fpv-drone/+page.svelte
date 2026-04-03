@@ -1,4 +1,5 @@
 <script>
+  import { isMobile } from "$lib";
   import {
     Hero,
     Section,
@@ -12,6 +13,7 @@
   import FullColumn from "$lib/components/FullColumn.svelte";
   import Table from "$lib/components/Table.svelte";
   import TwoColumn from "$lib/components/TwoColumn.svelte";
+  import { onMount } from "svelte";
 
   const metadata = [
     { label: "Completed", value: "04.2025" },
@@ -24,14 +26,14 @@
   <title>5" FPV Drone</title>
   <meta
     name="description"
-    content="A hands-on build that evolved through rapid iteration: soldering, CAD changes, firmware tuning, radio upgrades, and a full power-system redesign."
+    content="What started as an experiment testing 3D-printed drone frames quickly grew into a fully fledged 5-inch FPV drone."
   />
 </svelte:head>
 <!-- Hero Section -->
 <Hero
   title={'5" FPV Drone'}
   image="/images/drone2.jpeg"
-  subtitle="A hands-on build that evolved through rapid iteration: soldering, CAD changes, firmware tuning, radio upgrades, and a full power-system redesign."
+  subtitle="What started as an experiment testing 3D-printed drone frames quickly grew into a fully fledged 5-inch FPV drone."
 />
 
 <!-- Project Overview -->
@@ -40,11 +42,11 @@
     {#snippet left()}
       <Reveal>
         <TextBlock size="sm" opacity={0.8}>
-          I began this project with an entry-level F4 FC/ESC stack and a
-          3D-printed PLA frame. Carbon-fiber PLA prints, an ELRS radio and UART
-          receiver, a Walksnail Avatar HD video system, and ultimately a used 5"
-          carbon frame with 1800KV motors and 6S batteries were all added to the
-          build over the course of several months.
+          I started this project with an entry-level F4 FC/ESC stack from
+          AliExpress and a 3D-printed PLA frame. Carbon-fiber PLA prints, an
+          ELRS radio and UART receiver, a Walksnail Avatar HD video system, and
+          ultimately a used 5" carbon frame with 1800KV motors and 6S batteries
+          were all added to the build over the course of several months.
         </TextBlock>
       </Reveal>
     {/snippet}
@@ -65,11 +67,10 @@
   <TwoColumn>
     {#snippet left()}
       <TextBlock opacity={0.8}>
-        The drone went through three major iterations, each pushing performance
-        and complexity further. The table below shows how the build evolved from
-        an early 3D-printed prototype to a fully capable 5" FPV drone,
-        highlighting the changes in frame, power system, electronics, and
-        control that enabled each step forward.
+        The drone went through three major iterations. The table {$isMobile
+          ? "below"
+          : "on the right"} shows how the build evolved from a 3D-printed prototype
+        to a powerful 5" FPV drone.
       </TextBlock>
     {/snippet}
     {#snippet right()}

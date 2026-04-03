@@ -41,16 +41,14 @@
     <Reveal>
       <TextBlock size="sm" opacity={0.8}>
         <p>
-          I began with a low-cost drift trike that I discovered on Facebook
-          Marketplace and quickly refined it into a dependable, quick electric
-          trike.
+          I was bored on my phone browsing through Facebook Marketplace when a
+          particular listing caught my attention. Two adult-sized drift trikes
+          made for riding down hills for only 200 CHF!
         </p>
         <p>
-          A 48V 20Ah system with a 1000W direct-drive motor, a high-end
-          programmable BLDC controller, appropriate disk brakes, lights, and
-          safety features replaced the strapped-on 36V pack and 500W geared hub
-          motor. CAD brackets, soldering, power wiring and firmware/config
-          tuning were among the tasks.
+          That was the start of a 4 month journey full of late-night soldering,
+          prototyping, wiring and researching, which resulted in a fully
+          electric trike, balancing comfort, performace and reliability.
         </p>
       </TextBlock>
     </Reveal>
@@ -72,10 +70,20 @@
   <TwoColumn>
     {#snippet left()}
       <TextBlock opacity={0.8}>
-        The trike went through several iterations, each improving reliability,
-        safety, and performance. The table below shows the evolution from a
-        rough prototype to a fully capable electric vehicle with proper safety
-        systems.
+        <p>
+          I categorised my upgrades into 3 main stages. The prototype was built
+          entirely from scrap parts in my basement and I was just focused on
+          getting the trike to drive for the first time.<br /> The main upgades
+          of the next stage, were a 48V Li-ion battery and a 1000W direct-drive
+          motor. With the huge power increase I had to make sure I wasn't soley
+          relying on rim brakes, so I installed disc brakes.<br /> The final
+          trike was equipped with a
+          <a href="https://ebikes.ca/product-info/grin-products/baserunner.html"
+            >Grin Technologies Baserunner</a
+          >
+          which allowed for regenerative breaking and a 10km/h speed boost through
+          a technique called <i>Field Weakening</i>.
+        </p>
       </TextBlock>
     {/snippet}
     {#snippet right()}

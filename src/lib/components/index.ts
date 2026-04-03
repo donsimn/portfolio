@@ -49,3 +49,5 @@ export { default as Navigation } from './Navigation.svelte';
 
 // Data Display Components
 export { default as Table } from './Table.svelte';
+export { default as AchievementList } from './AchievementList.svelte';
+export { default as BentoAchievements } from './BentoAchievements.svelte';

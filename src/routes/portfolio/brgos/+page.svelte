@@ -37,15 +37,14 @@
     <Reveal>
       <TextBlock size="sm" opacity={0.8}>
         <p>
-          My main function in the team was developing and maintaining the OS. I
+          My main role in the team was developing and maintaining the OS. I
           worked in a continuous feedback loop with our driver and engineer
           Jaques to refine the robots controls.
         </p>
         <p>
-          Beyond software, I contributed directly to the mechanical engineering
-          of the robot. I helped diagnosing mechanical failure points and
-          implementing design improvements, including stabilizing gear systems
-          to prevent grinding under high torque.
+          I also helped designing and building the robot by diagnosing
+          mechanical failure points, including stabilizing gears to prevent
+          grinding under high torque.
         </p>
       </TextBlock>
     </Reveal>

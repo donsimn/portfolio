@@ -22,6 +22,10 @@
     { label: "Location", value: "Basel, Switzerland" },
     { label: "Education", value: "Gymnasium Münchenstein" },
     { label: "Role", value: "TA @ TechLabs Basel" },
+    {
+      label: "Languages",
+      value: "DE · EN · CHde · LT (B2) · FR (B1) · RU (A1)",
+    },
   ];
 </script>
 
@@ -34,10 +38,7 @@
 </svelte:head>
 
 <!-- Hero -->
-<Hero
-  title="About"
-  subtitle="Systems engineer, cyber defense scholar, and lifelong builder."
-/>
+<Hero title="About" subtitle="Second-year student at Gymnasium Münchenstein" />
 
 <!-- Portrait + Intro -->
 <Section padding="lg" border="bottom">
@@ -58,7 +59,7 @@
       <Reveal delay={100}>
         <TextBlock size="lg">
           <p>
-            At age 10 I wrote my first computer program on Notepad++. My passion
+            At age 12 I wrote my first computer program on Notepad++. My passion
             for systems evolved quickly; Within a year I joined a development
             team and began building paid Discord bot features, where I got my
             first taste of professional software work.
@@ -78,7 +79,7 @@
   </TwoColumn>
 </Section>
 
-<!-- Extended Bio -->
+<!--
 <Section padding="lg" border="bottom">
   <CenteredColumn width="medium">
     <Reveal>
@@ -86,7 +87,7 @@
         <p>
           My technical foundation was built through years of self-directed study
           and hands-on project work. I am currently sharpening my offensive and
-          defensive security skills through the Swiss Army's SPARC program — a
+          defensive security skills through the Swiss Army's SPARC program, a
           rigorous pathway for young cyber defense specialists.
         </p>
         <p>
@@ -99,6 +100,7 @@
     </Reveal>
   </CenteredColumn>
 </Section>
+-->
 
 <!-- CTA -->
 <Section padding="xl" background="inverted">

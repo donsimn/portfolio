@@ -139,10 +139,10 @@
             Email
           </h3>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:simonas.zabulionis@icloud.com"
             class="text-lg hover:opacity-60 transition-opacity font-mono"
           >
-            hello@example.com
+            simonas.zabulionis@icloud.com
           </a>
         </div>
         <div>
@@ -153,15 +153,7 @@
           </h3>
           <div class="space-y-2">
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block text-lg hover:opacity-60 transition-opacity"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://github.com"
+              href="https://github.com/donsimn"
               target="_blank"
               rel="noopener noreferrer"
               class="block text-lg hover:opacity-60 transition-opacity"
@@ -169,7 +161,7 @@
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/simonas-zabulionis-8a4aa8373"
               target="_blank"
               rel="noopener noreferrer"
               class="block text-lg hover:opacity-60 transition-opacity"
