@@ -175,6 +175,10 @@
     .bento {
       grid-template-columns: 1fr;
     }
+    .card-foot-push {
+      margin-top: 1rem;
+      padding-top: 0;
+    }
   }
 
   /* ── Cards ────────────────────────────────────────── */
@@ -184,7 +188,12 @@
     display: flex;
     flex-direction: column;
     padding: 1.25rem 1.5rem 1.5rem;
-    min-height: 180px;
+  }
+
+  @media (min-width: 641px) {
+    .card {
+      min-height: 180px;
+    }
   }
 
   :global(.dark) .card {

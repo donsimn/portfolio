@@ -41,43 +41,6 @@
 
 <Section padding="lg" border="bottom">
   <FullColumn>
-    <SectionHeader title="About" rule="after" />
-  </FullColumn>
-
-  <TwoColumn ratio="8-4">
-    {#snippet left()}
-      <TextBlock size="lg" opacity={0.8}>
-        <p>
-          At age 12 I wrote my first computer program on Notepad++. My passion
-          for systems evolved quickly; Within a year I joined a development team
-          and began building paid Discord bot features, where I got my first
-          taste of professional software work.
-        </p>
-        <p>
-          Now, at 17, I am in my second year at Gymnasium Münchenstein while
-          working as a teacher's assistant and all-rounder at TechLabs Basel. My
-          focus has since shifted toward cybersecurity. I am heavily invested in
-          the field and am currently sharpening my technical skills through the
-          Swiss Army's SPARC program.
-        </p>
-      </TextBlock>
-    {/snippet}
-    {#snippet right()}
-      <TextBlock opacity={0.6}>
-        <p>
-          <strong>Expertise</strong><br />
-          Cybersecurity<br />
-          Applied AI Engineering<br />
-          System Design<br />
-          Languages
-        </p>
-      </TextBlock>
-    {/snippet}
-  </TwoColumn>
-</Section>
-
-<Section padding="lg" border="bottom">
-  <FullColumn>
     <SectionHeader
       title="Recognition & Experience"
       subtitle="Competitions, programs, and milestones"
