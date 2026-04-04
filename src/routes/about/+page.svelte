@@ -25,10 +25,10 @@
   ];
 
   const languages = [
-    { label: "Lithuanian", value: "Mother tongue" },
-    { label: "German", value: "Fluent" },
+    { label: "German", value: "Native" },
     { label: "English", value: "Fluent" },
     { label: "Swiss German", value: "Fluent" },
+    { label: "Lithuanian", value: "Mother tongue" },
     { label: "French", value: "Intermediate" },
     { label: "Russian", value: "Beginner" },
   ];

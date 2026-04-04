@@ -30,7 +30,7 @@
 
 <Hero
   title="Simonas Zabulionis"
-  subtitle="Systems Engineer / Cyber Defense Specialist"
+  subtitle="Student / Cybersecurity / Applied Engineering"
   height="tall"
 >
   <ButtonGroup align="left" gap="md">
