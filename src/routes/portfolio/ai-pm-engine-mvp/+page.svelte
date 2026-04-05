@@ -23,7 +23,7 @@
   <title>AI-Driven Problem Management Engine MVP</title>
   <meta
     name="description"
-    content="During my summer internship at Roche I was given the oppertunity to design and code a system, that processes bulk incident data to cluster and analyze their root cause."
+    content="During my summer internship at Roche I was given the opportunity to design and code a system, that processes bulk incident data to cluster and analyze their root cause."
   />
 </svelte:head>
 <!-- Hero Section -->
@@ -38,10 +38,9 @@
     {#snippet left()}
       <TextBlock size="sm" opacity={0.8}>
         <p>
-          Problem Management means manually reviewing large volumes of
-          incident data to identify root causes. The goal of this project was
-          automating this time consuming task using LLMs and a vector
-          database.
+          Problem Management means manually reviewing large volumes of incident
+          data to identify root causes. The goal of this project was automating
+          this time consuming task using LLMs and a vector database.
         </p>
       </TextBlock>
     {/snippet}

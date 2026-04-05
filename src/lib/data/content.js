@@ -63,7 +63,7 @@ export const portfolioProjects = [
     slug: 'ai-pm-engine-mvp',
     title: 'AI-Driven Problem Management Engine MVP',
     date: 'Jul 2025',
-    description: 'During my summer internship at Roche I was given the oppertunity to design and code a system, that processes bulk incident data to cluster and analyze their root cause.',
+    description: 'During my summer internship at Roche I was given the opportunity to design and code a system, that processes bulk incident data to cluster and analyze their root cause.',
     thumbnail: '',
     tags: ['Problem Management', 'Vector Database', 'Typescript'],
     client: 'Roche',
