@@ -29,6 +29,16 @@ export const blogPosts = [
  */
 export const portfolioProjects = [
   {
+    slug: 'ai-pm-engine-mvp',
+    title: 'AI-Driven Problem Management Engine MVP',
+    date: 'Jul 2025',
+    description: 'During my summer internship at Roche I was given the opportunity to design and code a system, that processes bulk incident data to cluster and analyze their root cause.',
+    thumbnail: '',
+    tags: ['Problem Management', 'Vector Database', 'Typescript'],
+    client: 'Roche',
+    year: '2025'
+  },
+  {
     slug: 'brgos',
     title: 'Vex V5 Robotics OS',
     date: 'Nov 2024 - Mar 2025',
@@ -38,16 +48,6 @@ export const portfolioProjects = [
     tags: ['Robotics', 'C++', 'Collaboration'],
     client: 'Team Big Red Gears',
     year: '2024'
-  },
-  {
-    slug: 'fpv-drone',
-    title: '5" FPV Drone',
-    date: 'Mar 2025 - Apr 2026',
-    description: 'What started as an experiment testing 3D-printed drone frames, quickly grew into a fully fledged 5-inch FPV drone.',
-    thumbnail: '',
-    tags: ['Soldering', 'Iterative Design', 'Betaflight'],
-    client: 'Personal Project',
-    year: '2025'
   },
   {
     slug: 'electric-trike',
@@ -60,13 +60,13 @@ export const portfolioProjects = [
     year: '2023'
   },
   {
-    slug: 'ai-pm-engine-mvp',
-    title: 'AI-Driven Problem Management Engine MVP',
-    date: 'Jul 2025',
-    description: 'During my summer internship at Roche I was given the opportunity to design and code a system, that processes bulk incident data to cluster and analyze their root cause.',
+    slug: 'fpv-drone',
+    title: '5" FPV Drone',
+    date: 'Mar 2025 - Apr 2026',
+    description: 'What started as an experiment testing 3D-printed drone frames, quickly grew into a fully fledged 5-inch FPV drone.',
     thumbnail: '',
-    tags: ['Problem Management', 'Vector Database', 'Typescript'],
-    client: 'Roche',
+    tags: ['Soldering', 'Iterative Design', 'Betaflight'],
+    client: 'Personal Project',
     year: '2025'
   }
 ];
