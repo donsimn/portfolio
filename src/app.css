@@ -118,7 +118,7 @@
   }
 
   p {
-    @apply text-base leading-relaxed;
+    @apply leading-relaxed;
     margin: 0;
   }
 

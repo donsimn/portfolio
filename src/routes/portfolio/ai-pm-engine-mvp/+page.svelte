@@ -13,9 +13,9 @@
   import TwoColumn from "$lib/components/TwoColumn.svelte";
 
   const metadata = [
-    { label: "Completed", value: "04.2025" },
-    { label: "Category", value: "Hardware" },
-    { label: "Type", value: "Personal Project" },
+    { label: "Completed", value: "07.2025" },
+    { label: "Category", value: "Software" },
+    { label: "Type", value: "Internship Project" },
   ];
 </script>
 

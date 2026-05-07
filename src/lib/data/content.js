@@ -8,11 +8,18 @@
  * @type {Array<{slug: string, title: string, date: string, description: string, thumbnail?: string, tags?: string[]}>}
  */
 export const blogPosts = [
-
+  {
+    slug: 'cybergym',
+    title: 'Building a Cyber Gym',
+    date: '07.05.2026',
+    description: 'How I went from accidentally taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard — and what the debugging taught me that no tutorial could.',
+    //thumbnail: '/images/blog/buffer-overflow.jpg',
+    tags: ['Home Lab']
+  }
 ];
 
 /*
- *   {
+ * {
     slug: 'demystifying-buffer-overflows',
     title: 'Demystifying Buffer Overflows',
     date: '2026.03.21',

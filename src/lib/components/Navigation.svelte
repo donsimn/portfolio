@@ -10,7 +10,7 @@
 
   const navItems: NavItem[] = [
     { label: "Portfolio", href: "/portfolio" },
-    // { label: "Blog", href: "/blog" },
+    { label: "Insights", href: "/insights" },
     { label: "About", href: "/about" },
   ];
 </script>
