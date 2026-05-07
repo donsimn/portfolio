@@ -1,4 +1,5 @@
 <script>
+  import { isMobile } from "$lib";
   import {
     Hero,
     Section,
@@ -196,12 +197,12 @@
       </p>
     </TextBlock>
   </CenteredColumn>
-  <Spacer />
+  {#if !$isMobile}<Spacer />{/if}
   <TwoColumn>
     {#snippet left()}
       <TextBlock opacity={0.8}>
         <p>
-          Forwarding Kali is pointless if I can't even reach pfSense.
+          Forwarding to Kali is pointless if I can't even reach pfSense.
           Temporarily disabling the firewall made clear, there indeed was some
           firewall rule denying the ICMP packets. Upon further investigation, I
           found a default rule on the WAN interface, blocking ingress traffic
@@ -236,7 +237,7 @@
       </code>
     {/snippet}
   </TwoColumn>
-  <Spacer />
+  {#if !$isMobile}<Spacer />{/if}
   <CenteredColumn>
     <TextBlock opacity={0.8}>
       <p>
