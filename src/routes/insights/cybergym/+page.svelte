@@ -26,13 +26,13 @@
   <title>Building a Cyber Gym</title>
   <meta
     name="description"
-    content="How I went from accidentally taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard."
+    content="How I went from almost taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard."
   />
 </svelte:head>
 
 <Hero
   title="Building a Cyber Gym"
-  subtitle="How I went from accidentally taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard."
+  subtitle="How I went from almost taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard."
 />
 
 <Section padding="sm" border="bottom">

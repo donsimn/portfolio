@@ -12,7 +12,7 @@ export const blogPosts = [
     slug: 'cybergym',
     title: 'Building a Cyber Gym',
     date: '07.05.2026',
-    description: 'How I went from accidentally taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard — and what the debugging taught me that no tutorial could.',
+    description: 'How I went from almost taking down our home network to building an isolated lab with Proxmox, pfSense, and WireGuard — and what the debugging taught me that no tutorial could.',
     //thumbnail: '/images/blog/buffer-overflow.jpg',
     tags: ['Home Lab']
   }
