@@ -50,13 +50,12 @@
   <FullColumn>
     <TextBlock size="md" opacity={0.8}>
       <p>
-        "why is the wifi so slow??" my sister sent the family chat. I didn't see
-        it − I was distracted watching packets fly by, whose source or
-        destination was not my laptop. I had messed up the router's ARP cache by
-        carrying out an attack I'd read about on the internet. This wasn't my
-        first time performing an ARP spoofing attack, but it certainly was my
-        last. At least on this LAN. My dad stopped me before I completely
-        crashed our network.
+        <i>"why is the wifi so slow??"</i> my sister sent the family chat. I didn't
+        see it − I was distracted watching packets fly by that neither originated
+        from nor were destined for my laptop. I had messed up the router's ARP cache
+        by carrying out an attack I'd read about on the internet. This wasn't my
+        first time performing an ARP spoofing attack, but it certainly was my last.
+        At least on this LAN. My dad stopped me before I completely crashed our network.
       </p>
       <p>
         Then an idea hit me. I need a <b>Cyber Gym</b>. A safe environment,
