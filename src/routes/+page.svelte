@@ -106,57 +106,53 @@
   </CenteredColumn>
 </Section>
 
-<!--
 <Section padding="lg" border="bottom">
   <FullColumn>
-      <SectionHeader
-        title="Recent Writing"
-        subtitle="Latest blog posts"
-        rule="after"
-      />
+    <SectionHeader
+      title="Recent Writing"
+      subtitle="Latest blog posts"
+      rule="after"
+    />
   </FullColumn>
 
   <FullColumn>
-      <div>
-        {#each posts as post, index}
-          <article>
-            <a href="/blog/{post.slug}">
-              <TwoColumn ratio="8-4">
-                {#snippet left()}
-                  <TextBlock>
-                    <h3>{post.title}</h3>
-                    <p>{post.description}</p>
-                  </TextBlock>
-                {/snippet}
-                {#snippet right()}
-                  <TextBlock opacity={0.6}>
-                    <p>
-                      {post.date}<br />
-                      {#if post.tags}
-                        {post.tags.join(", ")}
-                      {/if}
-                    </p>
-                  </TextBlock>
-                {/snippet}
-              </TwoColumn>
-            </a>
-          </article>
-          {#if index < posts.length - 1}
-            <Separator />
-          {/if}
-        {/each}
-      </div>
+    <div>
+      {#each posts as post, index}
+        <article>
+          <a href="/insights/{post.slug}">
+            <TwoColumn ratio="8-4">
+              {#snippet left()}
+                <TextBlock>
+                  <h3>{post.title}</h3>
+                  <p>{post.description}</p>
+                </TextBlock>
+              {/snippet}
+              {#snippet right()}
+                <TextBlock opacity={0.6}>
+                  <p>
+                    {post.date}<br />
+                    {#if post.tags}
+                      {post.tags.join(", ")}
+                    {/if}
+                  </p>
+                </TextBlock>
+              {/snippet}
+            </TwoColumn>
+          </a>
+        </article>
+        {#if index < posts.length - 1}
+          <Separator />
+        {/if}
+      {/each}
+    </div>
   </FullColumn>
 
   <CenteredColumn width="narrow">
-      <ButtonGroup align="center">
-        <Button variant="secondary" size="lg" href="/blog"
-          >View All Posts</Button
-        >
-      </ButtonGroup>
+    <ButtonGroup align="center">
+      <Button variant="secondary" size="lg" href="/blog">View All Posts</Button>
+    </ButtonGroup>
   </CenteredColumn>
 </Section>
--->
 
 <Section padding="xl" background="inverted">
   <CenteredColumn width="medium">
