@@ -9,6 +9,13 @@
  */
 export const blogPosts = [
   {
+    slug: 'kobold-htb-writeup',
+    title: 'Solving Kobold HTB',
+    date: '15.05.2026',
+    description: 'A documentation of my tought process and approach to solving Kobold on HackTheBox.',
+    tags: ['Writeup']
+  },
+  {
     slug: 'cybergym',
     title: 'Building a Cyber Gym',
     date: '07.05.2026',
