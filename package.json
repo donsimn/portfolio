@@ -4,6 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
+		"fetch-obsidian": "node scripts/fetch-obsidian.js",
 		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",

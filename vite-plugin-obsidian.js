@@ -42,6 +42,8 @@ const BLOCK_OPEN = /^%%block:(\w+)%%\s*$/
 const BLOCK_CLOSE = /^%%end%%\s*$/
 const FENCE_OPEN = /^```(\w*).*$/   // captures language, ignores anything after (e.g. title hints)
 const FENCE_CLOSE = /^```\s*$/
+const UL_ITEM = /^(\s*)[*\-+]\s+(.+)$/
+const OL_ITEM = /^(\s*)\d+\.\s+(.+)$/
 
 /** Heading text → valid JS identifier */
 function headingToKey(text) {
@@ -83,12 +85,86 @@ function safeHref(url) {
 // Inline markdown → HTML (no block-level elements — those are handled above)
 // ---------------------------------------------------------------------------
 function inlineMarkdown(text) {
-  return text
+  // Extract code spans first so their contents are never touched by other rules
+  const codeSpans = []
+  const safe = text.replace(/`(.+?)`/g, (_, c) => {
+    codeSpans.push(`<code>${escapeHtml(c)}</code>`)
+    return `\x00${codeSpans.length - 1}\x00`
+  })
+
+  const rendered = safe
     .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
     .replace(/_(.+?)_/g, '<i>$1</i>')
-    .replace(/`(.+?)`/g, (_, c) => `<code>${escapeHtml(c)}</code>`)
-    .replace(/\[(.+?)\]\((.+?)\)/g, (_, text, url) =>
-      `<a href="${escapeHtml(safeHref(url))}">${escapeHtml(text)}</a>`)
+    .replace(/(?<![(\["'>])(https?:\/\/[^\s<>"'()[\]]+)/g, rawUrl => {
+      const url = rawUrl.replace(/[.,!?:;]+$/, '')
+      return `<a href="${escapeHtml(safeHref(url))}">${escapeHtml(url)}</a>`
+    })
+    .replace(/\[(.+?)\]\((.+?)\)/g, (_, t, url) =>
+      `<a href="${escapeHtml(safeHref(url))}">${escapeHtml(t)}</a>`)
+
+  return rendered.replace(/\x00(\d+)\x00/g, (_, i) => codeSpans[+i])
+}
+
+// ---------------------------------------------------------------------------
+// Build nested <ul>/<ol> HTML from a run of list lines
+// ---------------------------------------------------------------------------
+function indentWidth(str, tabSize = 4) {
+  let col = 0
+  for (const ch of str) col += ch === '\t' ? tabSize - (col % tabSize) : 1
+  return col
+}
+
+function buildListHtml(listLines) {
+  const items = listLines
+    .filter(l => UL_ITEM.test(l) || OL_ITEM.test(l))
+    .map(line => {
+      const u = line.match(UL_ITEM)
+      const o = line.match(OL_ITEM)
+      const m = u || o
+      return { indent: indentWidth(m[1]), type: u ? 'ul' : 'ol', text: sanitize(inlineMarkdown(m[2])) }
+    })
+
+  if (!items.length) return ''
+
+  const openTag = type => type === 'ul'
+    ? '<ul style="list-style-type: square; padding-left: 1.5em; margin-bottom: 0">'
+    : '<ol style="list-style-type: decimal; padding-left: 1.5em; margin-bottom: 0">'
+
+  const stack = []
+  let html = ''
+
+  for (const item of items) {
+    if (!stack.length) {
+      html += `${openTag(item.type)}<li>${item.text}`
+      stack.push({ type: item.type, indent: item.indent })
+      continue
+    }
+
+    const top = stack[stack.length - 1]
+
+    if (item.indent > top.indent) {
+      html += `${openTag(item.type)}<li>${item.text}`
+      stack.push({ type: item.type, indent: item.indent })
+    } else {
+      while (stack.length > 1 && stack[stack.length - 1].indent > item.indent) {
+        const p = stack.pop()
+        html += `</li></${p.type}>`
+      }
+      if (stack[stack.length - 1].type !== item.type) {
+        const p = stack.pop()
+        html += `</li></${p.type}>${openTag(item.type)}`
+        stack.push({ type: item.type, indent: item.indent })
+      }
+      html += `</li><li>${item.text}`
+    }
+  }
+
+  while (stack.length) {
+    const p = stack.pop()
+    html += `</li></${p.type}>`
+  }
+
+  return html
 }
 
 // ---------------------------------------------------------------------------
@@ -129,12 +205,33 @@ function parseLines(lines) {
     codeBlocks.push({ code: fenceLines.join('\n'), language: fenceLang })
   }
 
-  const html = sanitize(
-    htmlLines
-      .filter(l => l.trim() !== '')
-      .map(inlineMarkdown)
-      .join('<br>')
-  )
+  let html = ''
+  let pendingBreaks = 0
+  let listBuf = []
+
+  function flushList() {
+    if (!listBuf.length) return
+    if (html) html += '<br>'.repeat(pendingBreaks + 1)
+    html += buildListHtml(listBuf)
+    listBuf = []
+    pendingBreaks = 0
+  }
+
+  for (const line of htmlLines) {
+    if (UL_ITEM.test(line) || OL_ITEM.test(line)) {
+      listBuf.push(line)
+    } else {
+      if (listBuf.length) flushList()
+      if (line.trim() === '') {
+        pendingBreaks++
+      } else {
+        if (html) html += '<br>'.repeat(pendingBreaks + 1)
+        html += sanitize(inlineMarkdown(line))
+        pendingBreaks = 0
+      }
+    }
+  }
+  flushList()
 
   return { html, codeBlocks }
 }
@@ -202,11 +299,17 @@ function toModule(exports) {
   return lines.join('\n') || 'export {};'
 }
 
+export { parseBlocks }
+
 // ---------------------------------------------------------------------------
 // Vite plugin
 // ---------------------------------------------------------------------------
-export default function obsidianPlugin({ vaultDir } = {}) {
+export default function obsidianPlugin({ vaultDir, cacheFile } = {}) {
   if (!vaultDir) throw new Error('[obsidian plugin] vaultDir option is required')
+
+  const resolvedCache = cacheFile
+    ? path.resolve(cacheFile)
+    : path.resolve('src/lib/data/obsidian-cache.json')
 
   const prefix = 'obsidian:'
 
@@ -221,17 +324,32 @@ export default function obsidianPlugin({ vaultDir } = {}) {
       if (!id.startsWith('\0' + prefix)) return
 
       const noteName = id.slice(('\0' + prefix).length)
-      const filePath = path.resolve(vaultDir, `${noteName}.md`)
 
+      // Vault unavailable (e.g. Vercel) — serve from pre-built cache
+      if (!fs.existsSync(vaultDir)) {
+        if (!fs.existsSync(resolvedCache)) {
+          throw new Error(
+            `[obsidian plugin] Vault not found and no cache at ${resolvedCache}.\n` +
+            `Run: npm run fetch-obsidian`
+          )
+        }
+        const cache = JSON.parse(fs.readFileSync(resolvedCache, 'utf-8'))
+        if (!cache[noteName]) {
+          throw new Error(
+            `[obsidian plugin] Note "${noteName}" missing from cache. Re-run: npm run fetch-obsidian`
+          )
+        }
+        return toModule(cache[noteName])
+      }
+
+      const filePath = path.resolve(vaultDir, `${noteName}.md`)
       if (!fs.existsSync(filePath)) {
         throw new Error(`[obsidian plugin] Note not found: ${filePath}`)
       }
 
       this.addWatchFile(filePath)
-
       const source = fs.readFileSync(filePath, 'utf-8')
-      const blocks = parseBlocks(source)
-      return toModule(blocks)
+      return toModule(parseBlocks(source))
     },
   }
 }
