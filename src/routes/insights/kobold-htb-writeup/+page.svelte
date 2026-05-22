@@ -28,7 +28,7 @@
   } from "obsidian:kobold-htb-writeup";
 
   const metadata = [
-    { label: "Published", value: "15.05.2026" },
+    { label: "Published", value: "22.05.2026" },
     { label: "Category", value: "Writeup" },
     { label: "Machine", value: "Kobold" },
     { label: "Reading Time", value: "2 min" },
