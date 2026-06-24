@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>Portfolio — Work</title>
+  <title>Portfolio // Work</title>
   <meta name="description" content="Selected projects" />
 </svelte:head>
 

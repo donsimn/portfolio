@@ -15,6 +15,7 @@
     AchievementList,
     BentoAchievements,
     Spacer,
+    ContactFooter,
   } from "$lib/components";
 
   /** @type {import('./$types').PageData} */
@@ -24,8 +25,7 @@
 </script>
 
 <svelte:head>
-  <title>Portfolio — Simonas Z</title>
-  <link rel="prefetch" as="image" href="/images/simonas1.jpg" />
+  <title>Portfolio // Simonas Z</title>
 </svelte:head>
 
 <Hero
@@ -154,15 +154,4 @@
   </CenteredColumn>
 </Section>
 
-<Section padding="xl" background="inverted">
-  <CenteredColumn width="medium">
-    <TextBlock size="xl" align="center">
-      <h2>Let's Work Together</h2>
-      <p>Available for select projects and collaborations.</p>
-    </TextBlock>
-    <Spacer size="md" />
-    <ButtonGroup align="center">
-      <Button variant="inverted" size="lg" href="/contact">Contact Me</Button>
-    </ButtonGroup>
-  </CenteredColumn>
-</Section>
+<ContactFooter />

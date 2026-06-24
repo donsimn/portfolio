@@ -22,9 +22,25 @@
         <a
           transition:fade={{ duration: 200 }}
           href="/"
-          class="text-xl md:text-2xl font-semibold tracking-tight hover:opacity-70 transition-opacity"
+          aria-label="Back to home"
+          class="inline-flex items-center hover:opacity-70 transition-opacity"
         >
-          HOME
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6 md:w-7 md:h-7"
+            aria-hidden="true"
+          >
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" />
+          </svg>
         </a>
       {/if}
     </div>

@@ -43,7 +43,7 @@
 </script>
 
 <svelte:head>
-  <title>Contact — Portfolio</title>
+  <title>Contact // Portfolio</title>
   <meta name="description" content="Get in touch" />
 </svelte:head>
 

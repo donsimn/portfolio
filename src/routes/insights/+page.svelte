@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>Insights — Portfolio</title>
+  <title>Insights // Portfolio</title>
   <meta name="description" content="Still working on my first blog post..." />
 </svelte:head>
 
